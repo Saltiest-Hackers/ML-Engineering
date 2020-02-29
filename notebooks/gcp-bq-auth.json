@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "lsds-bw-salty-mle",
+  "private_key_id": "70dd4c5ea92212244916c9f83b67f991f50ace63",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCVS/FF3yuoerYr\nWXCIWEMQ0qkBW0lBcAyvc0XaObd4ldO+IwHCt9NbFyVwy6e58or80V1iVMs4Fn+j\nmBFBFEwlyGNlxZZ2PvuaP+/isr+qztDgMimJF4ZI9qpq3YtMoWrB9m5JcWWeM7qQ\n4TJZRktP6oUWJ6IrDBMQclsDOGTvlpvsddBbNCl24r8fZUUMTmXFbhEacBZy+T+7\n6iAI4mj1rpDBzpR/2yAT2uG/2VlvucL05tQ5DVBrtl+hNYTNIjKvJt826XGogwIJ\n4SM5d+0G8JqbZlJF2jgwXDDjyyHgPAaonlypwwaEkuBLbhQaTUezcKiTVOMRBHu+\nVGhsHETTAgMBAAECggEAEmPTs8Wfp8B7Jq/SWsPJzw1ZNV+R5cua5Gm7QFGSYKTO\npkHC+myQ+PbK7S/zgxt131pyuaVe5ZPFOS4xbJDG0x3x5caxl/MoztadV+aovAN/\nBdQSpbO4yM1e2eGxl54ye53n9of5+m4TcbvWQITrdfaaBMvw/9hxk2RirZeJZ1w3\nuX+ivbkOJLkH9yPaO76pB0HQjA70ZILpVIUwoa22xwFIswdLL1fWdjFHPP07AEFj\nG6bQ3MXz2isZPAjo+VqarAr7o2uIPyWP/pQSbX3G/WSJ9z7tVthMktn7T5O7eAAK\nvt2oPCFXGzolfUcsiVKOnn5nKZkytWPqDU2KvxHw4QKBgQDLUD3i7NOwz6pGxSIN\nUJHvd6nQglat1vMcFgeXCQ/JkP8UNUit2ALmXQW9zuMSB/eEyj8Nyl9l0yepc0BN\n2wAHG1afXobyiDMdtUo+xbNSTcemt+/3V3fa9og4K5f87lkxArmOOJvvptgrFTlH\nXGFW9xbUkKUiws2EUBAOLFky2wKBgQC7/D3MEcNlS3jt5I2355jgwLo3ZtWtwinv\nvjO5N1mYaj5j0ygG4D0DIFtn3BoSSyRsDXYuttne1mhsK5B3KivaJEhtOQxFlEc1\nfMbkvavlZkemKKaPWQLjKW0HiE2EQiIAlA8TQ4A+yLepdExg0ilWKNY2nQyCbWuw\ngV7XTTULaQKBgFU7VFZXVf9fb1Cvv7C5QBSVo7jnixLhc5UonxHwGJA1mtmL5OYM\nElskUA3cN1ENyfP/HSPY3NlBBfWBfUmmL4LLMSsqY4Q1GMixgWiDVMOCG9qGbbDR\nGEvQ4hY6IENGYFmtfMBkduqmlSSqhxKlZaEhgI6n/LJv29xF/BUU/mfVAoGAWg2N\nAQxlYUoVZUj+xuGwb8KDsnSV2kZQVqP0HT8xsXz75FBMNXcIY04F26wp5SeQDB8q\nxVgc6M4neeIos51FIpwNAh25Dj/pGOtsUDm4dg1YN3XzzGnkozO+IkSedcREi6hh\nzGWisvDuYsPurtcerEKl08XKL1UBqK1g5Jz80zkCgYEAlObQeaQtYv0LbbA28w/T\nc7ImvQfqSjO6BJ2IU9Ih7VDOobrqawlDzMgXSRSCMhHSUSvfHXNzdBiB0AB0JOoN\nCsIxF8vEoEadCe9norS/sr9f9hE633p23TMMqWgfnT2r8ZyAweeZgIzHD22k72YH\nD67Bsv2MN2pZDSh0wM1nRSM=\n-----END PRIVATE KEY-----\n",
+  "client_email": "salty-mle-btr-dev@lsds-bw-salty-mle.iam.gserviceaccount.com",
+  "client_id": "106067277479266552141",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/salty-mle-btr-dev%40lsds-bw-salty-mle.iam.gserviceaccount.com"
+}
