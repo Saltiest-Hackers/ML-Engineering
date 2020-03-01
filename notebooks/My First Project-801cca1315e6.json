@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "hopeful-ally-269723",
+  "private_key_id": "801cca1315e6f0336b6705da669c96ea76829521",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCQEHTgF/xwelhp\n9GXZu2uzJXcmfmnB6cjKTCRR+YQrPkhWj0xYtrXds/nwF9jsk+NRajr5tXk7dPYk\nuyUIEcfrGrDP+D1reEET6exWBjoroKIRF0s0SzQxzyW6DCHBHEnv+/mKcMlfikoB\nlSqTIRN+ku+YwfbK7zxSDasvsRuo1y8j34zPMz30oGBECpZhsDl9Awoq+7LfrxUW\nc10DPmo1pKFD/GgQr2NyigJ3hzrizBNYD9CZbGiUbJAetIwenlw/lGXnDyuwljZ8\noLvkyS3uOUk54h1VCwbVJ95kkBTio6mzx7CX/93beiIT0DuIWhM3naJvui7f4Dof\n7PEsJa3LAgMBAAECggEABe0nYbCa6eWejX1IU1SqcYwxApxgrWF4qRnIxLaHAWBm\niWkLsvqRMLWeqonQmqraxxafpnYYrqF5Hrm0JEjW+Iz4iRWlMS6ZPsB4wHExI2pQ\nQHO83EHbu9DRtH2bRd5sDDtJYLCTGCMQOFByl+rcanCQ+q+//0koKhf12thmUuO3\ncbWw+HR8v2Fxc6mobfpmRLsG6Hl11VLMNquX+Dvm4rt2W0wN8wZg91cPQpes/icg\n61yDT7CziDUWueke2hSlHRxZz441Jnvh0cI2ZHPD6AK1B6BQU4m6x/YRhwULD+nk\nN7RyCelSQNlJkCb4rHWQkKnVtZoKOYKecEuHUyLxwQKBgQDK5chcDO5ObMjCqU/4\njL6iyqqEaS12zQJdT9P9rdUYz3xqMlrQnaIupSe6EZ/zvaJirfPTBAkk8ISGvaHW\ns0IHBB5GRMYycX48tPdxgwkEaMltc1k9OV93z4p8nc4h0Ht7IOw9ZOCZkGfDq23j\nib4qaVOUnK3i6UBRX0VMQ3qPRQKBgQC1xNHO8NlU9KSj9NTQwzQIudG4UhpcF+6p\nNAeSoD+fAy4wWZGFTi198dgpGIVSvvquJizUKeWd85wsavaHiWoVQWZGAT0h0l3V\nioHGVKG+DYt8mTVRsF15l2K/fTU3ulPZV4rDHkruP1dEcXL6O4w9S2cTMgb+5vjK\n2YlLZctRzwKBgQCMsocb/gOK8rjM9Cf2jXLs5GkWZPEX/tXy6xZwRYkOKWN3KO/8\n1jLO8cv4pZwro4blswbvf07wBLGB1iJSBgB1aQ+tXqep9zW41yz31Av+uMNlWKW7\nZPuk05CPFccJf88A9TWc5UUyeAbckxYiwTPTqTJCTdvvDByD0PL3DZwBmQKBgHwH\njB6IC9RDhuB1nI3C1QurN+Zs5521mt2MKiqr/B2Vvvuw8nIi0TniP1xzZe37cPRK\nCkbPO+YWp5dLeWMsqd1NHetgxwUAFZUziK/7ac5UUby4kkBmdrIUUYZWemzHUJW6\nfW38iqadQ//o5crHvT7J59CaT1m540QPQfbXw+/TAoGBAKYbepQctM4eaOr99Exk\nqd7wTsXHL1FsrWYGYEk5C/OfcO3dAVQkDdUkRq4+OL39jbe1SAWm2pcKlaXkNA+y\nswx2a4l3i2AQpdEb8MW1Bstxe9yMygWmaXESksDsLfODEbKLvsOAgYwJjJu6gCEj\nFekbx72uowUdvHBGGCJuQhl2\n-----END PRIVATE KEY-----\n",
+  "client_email": "erik-cowley@hopeful-ally-269723.iam.gserviceaccount.com",
+  "client_id": "111578871656315475340",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/erik-cowley%40hopeful-ally-269723.iam.gserviceaccount.com"
+}
