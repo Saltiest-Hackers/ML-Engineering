@@ -1,0 +1,183 @@
+#%RAML 0.8
+title: Hacker News
+version: v0
+baseUri: 'https://hacker-news.firebaseio.com/v0'
+documentation:
+  - title: Hacker News
+    content: |-
+      ## Welcome
+
+      This is a place to put general notes and extra information, for internal use.
+
+      To get started designing/documenting this API, select a version on the left. # Title
+      No Description
+/item:
+  displayName: item
+  '/{item-id}.json':
+    displayName: item-id.json
+    uriParameters:
+      item-id:
+        type: integer
+    get:
+      description: |-
+        <p>Stories, comments, jobs, Ask HNs and even polls are just items. They're identified by their ids, which are unique integers, and live under https://hacker-news.firebaseio.com/v0/item/{item-id}</p>
+        <p>Story: https://hacker-news.firebaseio.com/v0/item/8863.json?print=pretty</p>
+      responses:
+        '200':
+          body:
+            application/json: |-
+              {
+                "schema": "{\n    \"oneOf\": [\n        {\n            \"allOf\": [\n                {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"id\": {\n                            \"type\": \"integer\",\n                            \"description\": \"The item's unique id.\"\n                        },\n                        \"deleted\": {\n                            \"type\": \"boolean\",\n                            \"description\": \"`true` if the item is deleted.\"\n                        },\n                        \"type\": {\n                            \"type\": \"string\",\n                            \"description\": \"The type of item. One of \\\"job\\\", \\\"story\\\", \\\"comment\\\", \\\"poll\\\", or \\\"pollopt\\\".I\",\n                            \"enum\": [\n                                \"job\",\n                                \"story\",\n                                \"comment\",\n                                \"poll\",\n                                \"pollopt\"\n                            ]\n                        },\n                        \"by\": {\n                            \"type\": \"string\",\n                            \"description\": \"The username of the item's author.\"\n                        },\n                        \"time\": {\n                            \"type\": \"integer\",\n                            \"description\": \"Creation date of the item, in [Unix Time](http://en.wikipedia.org/wiki/Unix_time).\"\n                        },\n                        \"dead\": {\n                            \"type\": \"boolean\",\n                            \"description\": \"`true` if the item is dead.\"\n                        },\n                        \"kids\": {\n                            \"type\": \"array\",\n                            \"description\": \"The ids of the item's comments, in ranked display order.\",\n                            \"items\": {\n                                \"type\": \"integer\"\n                            }\n                        }\n                    },\n                    \"required\": [\n                        \"id\",\n                        \"type\"\n                    ]\n                },\n                {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"parent\": {\n                            \"type\": \"integer\",\n                            \"description\": \"The item's parent. For comments, either another comment or the relevant story. For pollopts, the relevant poll.\"\n                        },\n                        \"text\": {\n                            \"type\": \"string\",\n                            \"description\": \"The comment, story or poll text. HTML.\"\n                        }\n                    }\n                }\n            ]\n        },\n        {\n            \"allOf\": [\n                {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"id\": {\n                            \"type\": \"integer\",\n                            \"description\": \"The item's unique id.\"\n                        },\n                        \"deleted\": {\n                            \"type\": \"boolean\",\n                            \"description\": \"`true` if the item is deleted.\"\n                        },\n                        \"type\": {\n                            \"type\": \"string\",\n                            \"description\": \"The type of item. One of \\\"job\\\", \\\"story\\\", \\\"comment\\\", \\\"poll\\\", or \\\"pollopt\\\".I\",\n                            \"enum\": [\n                                \"job\",\n                                \"story\",\n                                \"comment\",\n                                \"poll\",\n                                \"pollopt\"\n                            ]\n                        },\n                        \"by\": {\n                            \"type\": \"string\",\n                            \"description\": \"The username of the item's author.\"\n                        },\n                        \"time\": {\n                            \"type\": \"integer\",\n                            \"description\": \"Creation date of the item, in [Unix Time](http://en.wikipedia.org/wiki/Unix_time).\"\n                        },\n                        \"dead\": {\n                            \"type\": \"boolean\",\n                            \"description\": \"`true` if the item is dead.\"\n                        },\n                        \"kids\": {\n                            \"type\": \"array\",\n                            \"description\": \"The ids of the item's comments, in ranked display order.\",\n                            \"items\": {\n                                \"type\": \"integer\"\n                            }\n                        }\n                    },\n                    \"required\": [\n                        \"id\",\n                        \"type\"\n                    ]\n                },\n                {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"text\": {\n                            \"type\": \"string\",\n                            \"description\": \"The comment, story or poll text. HTML.\"\n                        },\n                        \"url\": {\n                            \"type\": \"string\",\n                            \"description\": \"The URL of the story.\"\n                        },\n                        \"title\": {\n                            \"type\": \"string\",\n                            \"description\": \"The title of the story, poll or job.\"\n                        }\n                    }\n                }\n            ]\n        },\n        {\n            \"allOf\": [\n                {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"id\": {\n                            \"type\": \"integer\",\n                            \"description\": \"The item's unique id.\"\n                        },\n                        \"deleted\": {\n                            \"type\": \"boolean\",\n                            \"description\": \"`true` if the item is deleted.\"\n                        },\n                        \"type\": {\n                            \"type\": \"string\",\n                            \"description\": \"The type of item. One of \\\"job\\\", \\\"story\\\", \\\"comment\\\", \\\"poll\\\", or \\\"pollopt\\\".I\",\n                            \"enum\": [\n                                \"job\",\n                                \"story\",\n                                \"comment\",\n                                \"poll\",\n                                \"pollopt\"\n                            ]\n                        },\n                        \"by\": {\n                            \"type\": \"string\",\n                            \"description\": \"The username of the item's author.\"\n                        },\n                        \"time\": {\n                            \"type\": \"integer\",\n                            \"description\": \"Creation date of the item, in [Unix Time](http://en.wikipedia.org/wiki/Unix_time).\"\n                        },\n                        \"dead\": {\n                            \"type\": \"boolean\",\n                            \"description\": \"`true` if the item is dead.\"\n                        },\n                        \"kids\": {\n                            \"type\": \"array\",\n                            \"description\": \"The ids of the item's comments, in ranked display order.\",\n                            \"items\": {\n                                \"type\": \"integer\"\n                            }\n                        }\n                    },\n                    \"required\": [\n                        \"id\",\n                        \"type\"\n                    ]\n                },\n                {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"parts\": {\n                            \"type\": \"array\",\n                            \"description\": \"A list of related pollopts, in display order.\",\n                            \"items\": {\n                                \"type\": \"integer\"\n                            }\n                        },\n                        \"descendants\": {\n                            \"type\": \"integer\",\n                            \"description\": \"In the case of stories or polls, the total comment count.\"\n                        },\n                        \"score\": {\n                            \"type\": \"integer\",\n                            \"description\": \"The story's score, or the votes for a pollopt.\"\n                        },\n                        \"title\": {\n                            \"type\": \"string\",\n                            \"description\": \"The title of the story, poll or job.\"\n                        },\n                        \"text\": {\n                            \"type\": \"string\",\n                            \"description\": \"The comment, story or poll text. HTML.\"\n                        }\n                    }\n                }\n            ]\n        },\n        {\n            \"allOf\": [\n                {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"id\": {\n                            \"type\": \"integer\",\n                            \"description\": \"The item's unique id.\"\n                        },\n                        \"deleted\": {\n                            \"type\": \"boolean\",\n                            \"description\": \"`true` if the item is deleted.\"\n                        },\n                        \"type\": {\n                            \"type\": \"string\",\n                            \"description\": \"The type of item. One of \\\"job\\\", \\\"story\\\", \\\"comment\\\", \\\"poll\\\", or \\\"pollopt\\\".I\",\n                            \"enum\": [\n                                \"job\",\n                                \"story\",\n                                \"comment\",\n                                \"poll\",\n                                \"pollopt\"\n                            ]\n                        },\n                        \"by\": {\n                            \"type\": \"string\",\n                            \"description\": \"The username of the item's author.\"\n                        },\n                        \"time\": {\n                            \"type\": \"integer\",\n                            \"description\": \"Creation date of the item, in [Unix Time](http://en.wikipedia.org/wiki/Unix_time).\"\n                        },\n                        \"dead\": {\n                            \"type\": \"boolean\",\n                            \"description\": \"`true` if the item is dead.\"\n                        },\n                        \"kids\": {\n                            \"type\": \"array\",\n                            \"description\": \"The ids of the item's comments, in ranked display order.\",\n                            \"items\": {\n                                \"type\": \"integer\"\n                            }\n                        }\n                    },\n                    \"required\": [\n                        \"id\",\n                        \"type\"\n                    ]\n                },\n                {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"parent\": {\n                            \"type\": \"integer\",\n                            \"description\": \"The item's parent. For comments, either another comment or the relevant story. For pollopts, the relevant poll.\"\n                        },\n                        \"score\": {\n                            \"type\": \"integer\",\n                            \"description\": \"The story's score, or the votes for a pollopt.\"\n                        }\n                    }\n                }\n            ]\n        },\n        {\n            \"allOf\": [\n                {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"id\": {\n                            \"type\": \"integer\",\n                            \"description\": \"The item's unique id.\"\n                        },\n                        \"deleted\": {\n                            \"type\": \"boolean\",\n                            \"description\": \"`true` if the item is deleted.\"\n                        },\n                        \"type\": {\n                            \"type\": \"string\",\n                            \"description\": \"The type of item. One of \\\"job\\\", \\\"story\\\", \\\"comment\\\", \\\"poll\\\", or \\\"pollopt\\\".I\",\n                            \"enum\": [\n                                \"job\",\n                                \"story\",\n                                \"comment\",\n                                \"poll\",\n                                \"pollopt\"\n                            ]\n                        },\n                        \"by\": {\n                            \"type\": \"string\",\n                            \"description\": \"The username of the item's author.\"\n                        },\n                        \"time\": {\n                            \"type\": \"integer\",\n                            \"description\": \"Creation date of the item, in [Unix Time](http://en.wikipedia.org/wiki/Unix_time).\"\n                        },\n                        \"dead\": {\n                            \"type\": \"boolean\",\n                            \"description\": \"`true` if the item is dead.\"\n                        },\n                        \"kids\": {\n                            \"type\": \"array\",\n                            \"description\": \"The ids of the item's comments, in ranked display order.\",\n                            \"items\": {\n                                \"type\": \"integer\"\n                            }\n                        }\n                    },\n                    \"required\": [\n                        \"id\",\n                        \"type\"\n                    ]\n                },\n                {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"descendants\": {\n                            \"type\": \"integer\",\n                            \"description\": \"In the case of stories or polls, the total comment count.\"\n                        },\n                        \"score\": {\n                            \"type\": \"integer\",\n                            \"description\": \"The story's score, or the votes for a pollopt.\"\n                        },\n                        \"title\": {\n                            \"type\": \"string\",\n                            \"description\": \"The title of the story, poll or job.\"\n                        },\n                        \"url\": {\n                            \"type\": \"string\",\n                            \"default\": \"http://stoplight.io/prism/\",\n                            \"description\": \"The URL of the story.\"\n                        }\n                    }\n                }\n            ]\n        }\n    ]\n}"
+              }
+      queryParameters:
+        print:
+          type: string
+          default: pretty
+/user:
+  displayName: user
+  '/{user-id}.json':
+    displayName: user-id.json
+    uriParameters:
+      user-id:
+        type: string
+    get:
+      description: '<p>Users are identified by case-sensitive ids, and live under https://hacker-news.firebaseio.com/v0/user/{user-id}. Only users that have public activity (comments or story submissions) on the site are available through the API.</p>'
+      responses:
+        '200':
+          body:
+            application/json: |-
+              {
+                "schema": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"id\": {\n            \"type\": \"string\",\n            \"description\": \"The user's unique username. Case-sensitive.\"\n        },\n        \"delay\": {\n            \"type\": \"integer\",\n            \"description\": \"Delay in minutes between a comment's creation and its visibility to other users.\"\n        },\n        \"created\": {\n            \"type\": \"integer\",\n            \"description\": \"Creation date of the user, in [Unix Time](http://en.wikipedia.org/wiki/Unix_time).\"\n        },\n        \"karma\": {\n            \"type\": \"integer\",\n            \"description\": \"The user's karma.\"\n        },\n        \"about\": {\n            \"type\": \"string\",\n            \"description\": \"The user's optional self-description. HTML.\"\n        },\n        \"submitted\": {\n            \"type\": \"array\",\n            \"description\": \"List of the user's stories, polls and comments.\",\n            \"items\": {\n                \"type\": \"integer\"\n            }\n        }\n    },\n    \"required\": [\n        \"id\",\n        \"created\",\n        \"karma\"\n    ]\n}",
+                "example": "{\n    \"id\": \"jl\",\n    \"delay\": 0,\n    \"created\": 1173923446,\n    \"karma\": 2937,\n    \"about\": \"This is a test\",\n    \"submitted\": [\n        8265435,\n        8168423,\n        8090946,\n        8090326,\n        7699907,\n        7637962,\n        7596179,\n        7596163,\n        7594569,\n        7562135,\n        7562111,\n        7494708,\n        7494171,\n        7488093,\n        7444860,\n        7327817,\n        7280290,\n        7278694,\n        7097557,\n        7097546,\n        7097254,\n        7052857,\n        7039484,\n        6987273,\n        6649999,\n        6649706,\n        6629560,\n        6609127,\n        6327951,\n        6225810,\n        6111999,\n        5580079,\n        5112008,\n        4907948,\n        4901821,\n        4700469,\n        4678919,\n        3779193,\n        3711380,\n        3701405,\n        3627981,\n        3473004,\n        3473000,\n        3457006,\n        3422158,\n        3136701,\n        2943046,\n        2794646,\n        2482737,\n        2425640,\n        2411925,\n        2408077,\n        2407992,\n        2407940,\n        2278689,\n        2220295,\n        2144918,\n        2144852,\n        1875323,\n        1875295,\n        1857397,\n        1839737,\n        1809010,\n        1788048,\n        1780681,\n        1721745,\n        1676227,\n        1654023,\n        1651449,\n        1641019,\n        1631985,\n        1618759,\n        1522978,\n        1499641,\n        1441290,\n        1440993,\n        1436440,\n        1430510,\n        1430208,\n        1385525,\n        1384917,\n        1370453,\n        1346118,\n        1309968,\n        1305415,\n        1305037,\n        1276771,\n        1270981,\n        1233287,\n        1211456,\n        1210688,\n        1210682,\n        1194189,\n        1193914,\n        1191653,\n        1190766,\n        1190319,\n        1189925,\n        1188455,\n        1188177,\n        1185884,\n        1165649,\n        1164314,\n        1160048,\n        1159156,\n        1158865,\n        1150900,\n        1115326,\n        933897,\n        924482,\n        923918,\n        922804,\n        922280,\n        922168,\n        920332,\n        919803,\n        917871,\n        912867,\n        910426,\n        902506,\n        891171,\n        807902,\n        806254,\n        796618,\n        786286,\n        764412,\n        764325,\n        642566,\n        642564,\n        587821,\n        575744,\n        547504,\n        532055,\n        521067,\n        492164,\n        491979,\n        383935,\n        383933,\n        383930,\n        383927,\n        375462,\n        263479,\n        258389,\n        250751,\n        245140,\n        243472,\n        237445,\n        229393,\n        226797,\n        225536,\n        225483,\n        225426,\n        221084,\n        213940,\n        213342,\n        211238,\n        210099,\n        210007,\n        209913,\n        209908,\n        209904,\n        209903,\n        170904,\n        165850,\n        161566,\n        158388,\n        158305,\n        158294,\n        156235,\n        151097,\n        148566,\n        146948,\n        136968,\n        134656,\n        133455,\n        129765,\n        126740,\n        122101,\n        122100,\n        120867,\n        120492,\n        115999,\n        114492,\n        114304,\n        111730,\n        110980,\n        110451,\n        108420,\n        107165,\n        105150,\n        104735,\n        103188,\n        103187,\n        99902,\n        99282,\n        99122,\n        98972,\n        98417,\n        98416,\n        98231,\n        96007,\n        96005,\n        95623,\n        95487,\n        95475,\n        95471,\n        95467,\n        95326,\n        95322,\n        94952,\n        94681,\n        94679,\n        94678,\n        94420,\n        94419,\n        94393,\n        94149,\n        94008,\n        93490,\n        93489,\n        92944,\n        92247,\n        91713,\n        90162,\n        90091,\n        89844,\n        89678,\n        89498,\n        86953,\n        86109,\n        85244,\n        85195,\n        85194,\n        85193,\n        85192,\n        84955,\n        84629,\n        83902,\n        82918,\n        76393,\n        68677,\n        61565,\n        60542,\n        47745,\n        47744,\n        41098,\n        39153,\n        38678,\n        37741,\n        33469,\n        12897,\n        6746,\n        5252,\n        4752,\n        4586,\n        4289\n    ]\n}"
+              }
+      queryParameters:
+        print:
+          type: string
+          default: pretty
+/maxitem.json:
+  displayName: maxitem.json
+  get:
+    description: '<p>The current largest item id is at https://hacker-news.firebaseio.com/v0/maxitem. You can walk backward from here to discover all items.</p>'
+    responses:
+      '200':
+        body:
+          application/json: |-
+            {
+              "schema": "{\n    \"type\": \"integer\"\n}",
+              "example": "9130260"
+            }
+    queryParameters:
+      print:
+        type: string
+        default: pretty
+/topstories.json:
+  displayName: topstories.json
+  get:
+    description: '<p>Up to 500 top and new stories are at https://hacker-news.firebaseio.com/v0/topstories and https://hacker-news.firebaseio.com/v0/newstories.</p>'
+    responses:
+      '200':
+        body:
+          application/json: |-
+            {
+              "schema": "{\n    \"type\": \"array\",\n    \"items\": {\n        \"type\": \"integer\"\n    }\n}",
+              "example": "[\n    9129911,\n    9129199,\n    9127761,\n    9128141,\n    9128264,\n    9127792,\n    9129248,\n    9127092,\n    9128367,\n    9038733\n]"
+            }
+    queryParameters:
+      print:
+        type: string
+        default: pretty
+/askstories.json:
+  displayName: askstories.json
+  get:
+    description: <p>Up to 200 of the latest Ask HN Stories!</p>
+    responses:
+      '200':
+        body:
+          application/json: |-
+            {
+              "schema": "{\n    \"type\": \"array\",\n    \"items\": {\n        \"type\": \"integer\"\n    }\n}",
+              "example": "[\n    9127232,\n    9128437,\n    9130049,\n    9130144,\n    9130064,\n    9130028,\n    9129409,\n    9127243,\n    9128571\n]"
+            }
+    queryParameters:
+      print:
+        type: string
+        default: prett
+/showstories.json:
+  displayName: showstories.json
+  get:
+    description: <p>Up to 200 of the latest Show HN Stories!</p>
+    responses:
+      '200':
+        body:
+          application/json: |-
+            {
+              "schema": "{\n    \"type\": \"array\",\n    \"items\": {\n        \"type\": \"integer\"\n    }\n}",
+              "example": "[\n    9127232,\n    9128437,\n    9130049,\n    9130144,\n    9130064,\n    9130028,\n    9129409,\n    9127243,\n    9128571\n]"
+            }
+    queryParameters:
+      print:
+        type: string
+        default: pretty
+/jobstories.json:
+  displayName: jobstories.json
+  get:
+    description: <p>Up to 200 of the latest Job Stories!</p>
+    responses:
+      '200':
+        body:
+          application/json: |-
+            {
+              "schema": "{\n    \"type\": \"array\",\n    \"items\": {\n        \"type\": \"integer\"\n    }\n}",
+              "example": "[\n    9127232,\n    9128437,\n    9130049,\n    9130144,\n    9130064,\n    9130028,\n    9129409,\n    9127243,\n    9128571\n]"
+            }
+    queryParameters:
+      print:
+        type: string
+        default: pretty
+/updates.json:
+  displayName: updates.json
+  get:
+    description: |-
+      <p>The item and profile changes are at https://hacker-news.firebaseio.com/v0/updates.</p>
+      <p>Example: https://hacker-news.firebaseio.com/v0/updates.json?print=pretty</p>
+    responses:
+      '200':
+        body:
+          application/json: |-
+            {
+              "schema": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"items\": {\n            \"type\": \"array\",\n            \"description\": \"List of HN Item IDs.\",\n            \"items\": {\n                \"type\": \"integer\"\n            }\n        },\n        \"profiles\": {\n            \"type\": \"array\",\n            \"description\": \"List of users identifiers.\",\n            \"items\": {\n                \"type\": \"string\"\n            }\n        }\n    }\n}",
+              "example": "{\n    \"items\": [\n        8423305,\n        8420805,\n        8423379,\n        8422504,\n        8423178,\n        8423336,\n        8422717,\n        8417484,\n        8423378,\n        8423238,\n        8423353,\n        8422395,\n        8423072,\n        8423044,\n        8423344,\n        8423374,\n        8423015,\n        8422428,\n        8423377,\n        8420444,\n        8423300,\n        8422633,\n        8422599,\n        8422408,\n        8422928,\n        8394339,\n        8421900,\n        8420902,\n        8422087\n    ],\n    \"profiles\": [\n        \"thefox\",\n        \"mdda\",\n        \"plinkplonk\",\n        \"GBond\",\n        \"rqebmm\",\n        \"neom\",\n        \"arram\",\n        \"mcmancini\",\n        \"metachris\",\n        \"DubiousPusher\",\n        \"dochtman\",\n        \"kstrauser\",\n        \"biren34\",\n        \"foobarqux\",\n        \"mkehrt\",\n        \"nathanm412\",\n        \"wmblaettler\",\n        \"JoeAnzalone\",\n        \"rcconf\",\n        \"johndbritton\",\n        \"msie\",\n        \"cktsai\",\n        \"27182818284\",\n        \"kevinskii\",\n        \"wildwood\",\n        \"mcherm\",\n        \"naiyt\",\n        \"matthewmcg\",\n        \"joelhaus\",\n        \"tshtf\",\n        \"MrZongle2\",\n        \"Bogdanp\"\n    ]\n}"
+            }
+    queryParameters:
+      print:
+        type: string
+        default: pretty
+schemas:
+  - shared-user: |-
+      {
+          "title": "Shared User",
+          "type": "object",
+          "properties": {
+              "username": {
+                  "type": "string"
+              },
+              "": {
+                  "type": "string"
+              }
+          }
+      }
+traits:
+  - standardErrors:
+      responses:
+        '401':
+          body:
+            application/json: |-
+              {
+                "schema": "{\n    \"type\": \"object\"\n}"
+              }
+        '404':
+          body:
+            application/json: |-
+              {
+                "schema": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"foo\": {\n            \"type\": \"string\"\n        },\n        \"bar\": {\n            \"type\": \"string\"\n        }\n    }\n}"
+              }
